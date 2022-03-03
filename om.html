@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8"/>
+	<head>
+		<title>Om</title>
+		<link rel="stylesheet" type="text/css" href="stilmall.css"/>
+		<link rel="icon" href="TE17.ico">
+		 
+		 <!-- Kod för kartan -->
+		 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+		
+		<style>
+			body{
+			background-image: url("bilder/serveroverview.png");
+			}
+		</style>
+		
+	</head>
+	<body>
+		<a href="index.html"><img class="logga" src="TE17.png" title="Hem" /></a>
+		<div class="top">
+		<a href="medlemmar.html">Medlemmar</a>
+		<a href="affarer.html">Aff&auml;rer</a>
+		<a href="farmer.html">Farmer</a>
+		<a href="om.html">Om</a>
+		<span class="topfiller"> </span></div>
+		<div class="om">
+			<h1>Om</h1>
+			Denna webbsida var ett projekt för webbutvecklingskursen jag, Jacob, gjorde under höstterminen 2018, andra året på gymnasiet.<br/><br/>
+			Jag startade upp en survival-värld på skoldatorn för att ha något att göra under torsdagarnas 4-timmars hål. Felix och Manfred som hade samma håltimma anslöt också efter några veckor. Tillslut flyttade jag över världen till pappas dator, så att den kunde vara igång 24/7, dock gick det inte att komma åt den på skolans nätverk eftersom porten servern låg på (25565) var blockerad.<br/><br/>
+			Jag valde att inte köra med /tp, vilket vi gjorde på tidigare Minecraft-servrar, Gustafs stora server Preem till exempel. Istället valde jag att köra med keepInventory på. Min tanke var att servern skulle vara kul att spela på, inte jobbig. Att dö i survival kan ofta vara slutet på ens playthrough om man blir av med sina saker, det ville jag undvika. En konsekvens av detta var att det var väldigt lätt att ta sig hem om man hade utforskat långt bort. Det var bara att dö, vilket jag anser vara både en fördel och en nackdel.<br/><br/>
+			<a class="content" href="https://drive.google.com/open?id=1s-r2OhhfzWT4zMXkiK8b9fDVklE0ynTE">Här</a> finns en länk till världsfilen (drygt 1 GB). Vi spelade i Update Aquatic 1.13.1. Just då pågick Season 6 av Hermitcraft, som gav mycket inspiration till servern. Skulle du hitta vilse när du utforskar världen kan du alltid teleportera till 0, 0 i alla dimensioner, allting låg centralt.<br/><br/>
+			Jag tror att vi började spela på servern någon gång tidigt i september. Mot slutet av oktober var det bara jag, Manfred och Karl som spelade. Jag skulle säga att servern dog ut innan mitten av november.<br/>
+			
+			<!-- Mer kod för kartan, uppdatera kartan när det finns en Minecraft map-viewer för 1.13 -->
+			<div id="mapid"></div>
+			<script>
+			var map = L.map('mapid',
+			{
+				//Ändrar hur många steg det går att zooma in och ut.
+				minZoom: 0,
+        		maxZoom: 1
+    		});
+			
+			//Initierar kartan
+			map.setView([0, 0], 0);
+			
+			//Ritar upp kartan från en bildkälla
+			L.tileLayer('karta/nsmbu/{z}/{x}/{y}.jpg').addTo(map);
+			</script>
+		</div>
+	</body>
+</html>
